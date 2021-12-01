@@ -169,11 +169,12 @@ let larger = 0;
 
 for (const index in threeMesurementData) {
   const numIndex = Number(index);
-  if (numIndex !== 0) {
-    if (threeMesurementData[numIndex] - threeMesurementData[numIndex - 1] > 0) {
-      larger++;
-    }
-  }
+
+  larger =
+    numIndex !== 0 &&
+    threeMesurementData[numIndex] > threeMesurementData[numIndex - 1]
+      ? larger + 1
+      : larger;
 }
 
 console.log(larger);

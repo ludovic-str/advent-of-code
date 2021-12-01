@@ -155,11 +155,9 @@ let larger = 0;
 
 for (const index in data) {
   const numIndex = Number(index);
-  if (numIndex !== 0) {
-    if (data[numIndex] - data[numIndex - 1] > 0) {
-      larger++;
-    }
-  }
+
+  larger =
+    numIndex !== 0 && data[numIndex] > data[numIndex - 1] ? larger + 1 : larger;
 }
 
 console.log(larger);
